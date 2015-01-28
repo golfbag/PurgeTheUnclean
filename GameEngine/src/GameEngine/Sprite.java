@@ -16,6 +16,4 @@ public abstract class Sprite extends GameObject {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	
-	
 }
