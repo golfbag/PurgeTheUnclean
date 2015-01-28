@@ -7,7 +7,7 @@ public abstract class GameObject {
 	
 	public GameObject(int xPos, int yPos){
 		this.xPos = xPos;
-		this.yPos= yPos;
+		this.yPos = yPos;
 	}
 	
 	abstract void draw();

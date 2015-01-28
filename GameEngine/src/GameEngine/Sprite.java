@@ -6,7 +6,7 @@ public abstract class Sprite extends GameObject {
 	
 	public Sprite(int xPos, int yPos, String fileName) {
 		super(xPos, yPos);
-		this.setFileName(fileName);
+		setFileName(fileName);
 	}
 
 	public String getFileName() {
