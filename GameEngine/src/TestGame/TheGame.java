@@ -19,7 +19,7 @@ public class TheGame {
 		Enemy fiende = new Enemy(20, 50, "alien");
 		firstLvl.addSprite(fiende);
 
-		RitYta ritYta = new RitYta(firstLvl);
+		GamePanel ritYta = new GamePanel(firstLvl);
 		game.add(ritYta);
 		String url = "file:///C:/Users/Administrator/Desktop/Kalimba.mp3";
 

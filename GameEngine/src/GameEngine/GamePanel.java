@@ -1,21 +1,20 @@
-package TestGame;
+package GameEngine;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
 
-import GameEngine.Renderer;
-import GameEngine.State;
-
-public class RitYta extends JPanel{
+public class GamePanel extends JPanel {
 	State state;
-	RitYta(State state){
+	
+	public GamePanel(State state){
 		this.state = state;
 	}
+	
 	@Override
  	public void paint(Graphics g){
 		Renderer.render(state, g);
  		repaint();
  	}
+
 }

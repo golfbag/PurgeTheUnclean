@@ -14,11 +14,5 @@ public class Enemy extends Sprite {
 	public void update() {
 	}
 
-	@Override
-	public void draw(Graphics2D g) {
-		g.drawImage(this.getImage(getFileName()), getXPos(), getYPos(),
-				getImage(getFileName()).getWidth(), getImage(getFileName())
-						.getHeight(), null);
-
-	}
+	
 }
