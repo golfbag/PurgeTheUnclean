@@ -1,17 +1,13 @@
 package GameEngine;
 
-import java.util.ArrayList;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 
-public class Renderer {
-	ArrayList<Sprite> sprites;
+	final public class Renderer {
 	
-	public Renderer(State state){
-		sprites = state.getSprites();
-	}
-	
-	public void render(){
-		for(Sprite sprite : sprites){
-			sprite.draw();
+	public static void render(State state, Graphics g){
+		for(Sprite sprite : state.getSprites()){
+			sprite.draw((Graphics2D) g);
 		}
 	}
 }

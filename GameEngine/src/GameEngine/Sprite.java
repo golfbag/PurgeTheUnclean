@@ -11,10 +11,10 @@ public abstract class Sprite extends GameObject {
 		this.imageID = imageID;
 	}
 
-	public String getFileName() {
+	public String getImageID() {
 		return imageID;
 	}
-
+	
 	public BufferedImage getImage(){
 		return Loader.getImage(imageID);
 	}
