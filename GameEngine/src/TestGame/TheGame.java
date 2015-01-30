@@ -10,8 +10,10 @@ public class TheGame {
 	public static void main(String[] args) {
 		GameWindow game = new GameWindow("Test", 640, 480);
 		try {
-			Loader.loadSound("test",  new URL("file:///C:/Users/Administrator/Desktop/Kalimba.wav"));
-			SoundEngine.playSound("test");
+			Loader.loadSound("helicopter",  new URL("file:///C:/Users/Administrator/Downloads/soundscrate-helicopter.wav"));
+			Loader.loadSound("rocket",  new URL("file:///C:/Users/Administrator/Downloads/soundscrate-rocket.wav"));
+			SoundEngine.loopSound("helicopter");
+			SoundEngine.playSound("rocket");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
