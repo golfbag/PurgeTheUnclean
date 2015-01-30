@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 
 public class InputHandler implements KeyListener{
 
-	public boolean keys[] = new boolean[65536];
+	private boolean keys[] = new boolean[65536];
 	
 	@Override
 	public void keyPressed(KeyEvent e) {

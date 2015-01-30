@@ -1,5 +1,7 @@
 package GameEngine;
 
+import java.awt.image.BufferedImage;
+
 public abstract class Sprite extends GameObject {
 	
 	private String fileName;
@@ -15,5 +17,8 @@ public abstract class Sprite extends GameObject {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+	public BufferedImage getImage(String fileName){
+		return Loader.getImage(fileName);
 	}
 }

@@ -10,9 +10,9 @@ public abstract class GameObject {
 		this.yPos = yPos;
 	}
 	
-	abstract void draw();
+	public abstract void draw();
 	
-	abstract void update();
+	public abstract void update();
 	
 	public int getXPos() {
 		return xPos;
