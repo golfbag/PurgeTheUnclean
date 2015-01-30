@@ -4,21 +4,18 @@ import java.awt.image.BufferedImage;
 
 public abstract class Sprite extends GameObject {
 	
-	private String fileName;
+	private final String imageID;
 	
-	public Sprite(int xPos, int yPos, String fileName) {
+	public Sprite(int xPos, int yPos, String imageID) {
 		super(xPos, yPos);
-		setFileName(fileName);
+		this.imageID = imageID;
 	}
 
 	public String getFileName() {
-		return fileName;
+		return imageID;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-	public BufferedImage getImage(String fileName){
-		return Loader.getImage(fileName);
+	public BufferedImage getImage(){
+		return Loader.getImage(imageID);
 	}
 }
