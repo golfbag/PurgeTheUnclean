@@ -26,6 +26,7 @@ public class TheGame {
 		game.add(ritYta);
 		String url = "file:///C:/Users/Administrator/Desktop/Kalimba.mp3";
 =======
+>>>>>>> origin/master
 		try {
 			Loader.loadSound("helicopter",  new URL("file:///C:/Users/Administrator/Documents/PurgeTheUnclean/GameEngine/src/TestGame/Sounds/soundscrate-helicopter.wav"));
 			Loader.loadSound("rocket",  new URL("file:///C:/Users/Administrator/Documents/PurgeTheUnclean/GameEngine/src/TestGame/Sounds/soundscrate-rocket.wav"));
