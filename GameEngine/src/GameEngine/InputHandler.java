@@ -21,7 +21,9 @@ public class InputHandler implements KeyListener{
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-	
 	}
 
+	public boolean isKey(int keyNumber){
+		 return keys[keyNumber];
+	}
 }
