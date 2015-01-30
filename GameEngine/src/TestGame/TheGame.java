@@ -10,35 +10,33 @@ import javax.swing.JPanel;
 import GameEngine.*;
 
 public class TheGame {
-	
-	
+
 	public static void main(String[] args) {
 		GameWindow game = new GameWindow("Test", 640, 480);
-<<<<<<< HEAD
-		
+
 		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien.png");
 		State firstLvl = new State();
-		Enemy fiende = new Enemy(20,50,"alien");
+		Enemy fiende = new Enemy(20, 50, "alien");
 		firstLvl.addSprite(fiende);
-		
-		
+
 		RitYta ritYta = new RitYta(firstLvl);
 		game.add(ritYta);
 		String url = "file:///C:/Users/Administrator/Desktop/Kalimba.mp3";
-=======
->>>>>>> origin/master
+
 		try {
-			Loader.loadSound("helicopter",  new URL("file:///C:/Users/Administrator/Documents/PurgeTheUnclean/GameEngine/src/TestGame/Sounds/soundscrate-helicopter.wav"));
-			Loader.loadSound("rocket",  new URL("file:///C:/Users/Administrator/Documents/PurgeTheUnclean/GameEngine/src/TestGame/Sounds/soundscrate-rocket.wav"));
+			Loader.loadSound(
+					"helicopter",
+					new URL(
+							"file:///C:/Users/Administrator/Documents/PurgeTheUnclean/GameEngine/src/TestGame/Sounds/soundscrate-helicopter.wav"));
+			Loader.loadSound(
+					"rocket",
+					new URL(
+							"file:///C:/Users/Administrator/Documents/PurgeTheUnclean/GameEngine/src/TestGame/Sounds/soundscrate-rocket.wav"));
 			SoundEngine.loopSound("helicopter");
 			SoundEngine.playSound("rocket");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 	}
-<<<<<<< HEAD
-	
 
-=======
->>>>>>> origin/master
 }
