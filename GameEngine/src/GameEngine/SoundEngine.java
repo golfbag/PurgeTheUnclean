@@ -1,9 +1,5 @@
 package GameEngine;
 
-import java.applet.Applet;
-import java.applet.AudioClip;
-import java.net.URL;
-
 //Static class
 public final class SoundEngine {
 	
