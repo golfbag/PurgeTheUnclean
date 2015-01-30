@@ -1,11 +1,7 @@
 package TestGame;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.swing.JPanel;
 
 import GameEngine.*;
 
@@ -21,7 +17,6 @@ public class TheGame {
 
 		GamePanel ritYta = new GamePanel(firstLvl);
 		game.add(ritYta);
-		String url = "file:///C:/Users/Administrator/Desktop/Kalimba.mp3";
 
 		try {
 			Loader.loadSound(
