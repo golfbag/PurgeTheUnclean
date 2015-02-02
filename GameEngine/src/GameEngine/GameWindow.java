@@ -8,10 +8,13 @@ import TestGame.Enemy;
 
 public final class GameWindow extends JFrame {
 	
-	private static boolean isRunning;
-	private static GamePanel gamePanel;
+	private boolean isRunning;
+	private GamePanel gamePanel;
 	private static State state;
 	private static InputHandler inputHandler;
+	private static int height;
+	private static int width;
+	
 	
 	public void run() {
 		initialize();
@@ -36,13 +39,23 @@ public final class GameWindow extends JFrame {
 		gamePanel.paint(getGraphics());
 	}
 
-	private GameWindow(String windowName, int width, int height){
+	private GameWindow(String windowName, int windowWidth, int windowHeight){
 		super(windowName);
-		setSize(width, height);
+		width = windowWidth;
+		height = windowHeight;
+		setSize(windowWidth, windowHeight);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		state = new State();
 		inputHandler = new InputHandler();
+	}
+	
+	public static int getWindowHeight(){
+		return height;
+	}
+	
+	public static int getWindowWidth(){
+		return width;
 	}
 	
 	public static GameWindow getInstance(String windowName, int width, int height){
