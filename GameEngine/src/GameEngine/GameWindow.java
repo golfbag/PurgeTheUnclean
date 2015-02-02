@@ -24,7 +24,7 @@ public class GameWindow extends JFrame {
 	public void initialize() {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
-		gamePanel.addKeyListener(inputHandler);
+		addKeyListener(inputHandler);
 	}
 
 	public void update() {

@@ -36,6 +36,8 @@ public class TheGame {
 		}
 		
 		game.run();
+		
+		
 	}
 
 }
