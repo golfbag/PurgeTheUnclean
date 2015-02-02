@@ -7,7 +7,7 @@ import GameEngine.Sprite;
 
 public class Enemy extends Sprite {
 
-	Enemy(int xPos, int yPos, String fileName) {
+	public Enemy(int xPos, int yPos, String fileName) {
 		super(xPos, yPos, fileName);
 	}
 
