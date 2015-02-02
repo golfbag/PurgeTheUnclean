@@ -1,5 +1,8 @@
 package TestGame;
 
+import java.awt.event.KeyEvent;
+
+import GameEngine.GameWindow;
 import GameEngine.Sprite;
 
 public class Enemy extends Sprite {
@@ -9,7 +12,9 @@ public class Enemy extends Sprite {
 	}
 
 	public void update() {
+		if(GameWindow.getInputHandler().isKey(KeyEvent.VK_UP))
+			setY(40);
+		
 	}
-
 	
 }
