@@ -15,12 +15,10 @@ public class TheGame {
 	public static void main(String[] args) {
 		GameWindow game = new GameWindow("Test", 640, 480);
 		
+//		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien.png");
+//		Enemy fiende = new Enemy(20, 50, "alien");
+//		game.getGameState().addSprite(fiende);
 		
-		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien.png");
-		Enemy fiende = new Enemy(20, 50, "alien");
-		game.getMyState().addSprite(fiende);
-		
-		String url = "file:///C:/Users/Administrator/Desktop/Kalimba.mp3";
 
 		try {
 			Loader.loadSound(
@@ -36,6 +34,7 @@ public class TheGame {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
+		
 		game.run();
 	}
 

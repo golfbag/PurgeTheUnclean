@@ -16,7 +16,6 @@ public class GameWindow extends JFrame {
 	public void run() {
 		initialize();
 		while (isRunning) {
-
 			update();
 			draw();
 		}
@@ -45,8 +44,13 @@ public class GameWindow extends JFrame {
 		state = new State();
 		inputHandler = new InputHandler();
 	}
-	public State getMyState(){
+	
+	public State getGameState(){
 		return this.state;
+	}
+	
+	public InputHandler getInputHandler(){
+		return inputHandler;
 	}
 
 }
