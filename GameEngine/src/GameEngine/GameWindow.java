@@ -21,13 +21,13 @@ public final class GameWindow extends JFrame {
 		}
 	}
 	
-	public static void initialize() {
+	public void initialize() {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
 		addKeyListener(inputHandler);
 	}
 
-	public static void update() {
+	public void update() {
 		for (Sprite sprite: state.getSprites())
 			sprite.update();
 	}
