@@ -45,5 +45,8 @@ public class GameWindow extends JFrame {
 		state = new State();
 		inputHandler = new InputHandler();
 	}
+	public State getMyState(){
+		return this.state;
+	}
 
 }

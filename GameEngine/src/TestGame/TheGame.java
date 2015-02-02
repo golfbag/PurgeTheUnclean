@@ -18,7 +18,7 @@ public class TheGame {
 		
 		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien.png");
 		Enemy fiende = new Enemy(20, 50, "alien");
-		game.getState().addSprite(fiende);
+		game.getMyState().addSprite(fiende);
 		
 		String url = "file:///C:/Users/Administrator/Desktop/Kalimba.mp3";
 
