@@ -13,7 +13,7 @@ import GameEngine.*;
 public class TheGame {
 
 	public static void main(String[] args) {
-		GameWindow game = new GameWindow("Test", 640, 480);
+		GameWindow game = GameWindow.getInstance("Test", 640, 480);
 		
 //		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien.png");
 //		Enemy fiende = new Enemy(20, 50, "alien");

@@ -6,12 +6,12 @@ import javax.swing.JFrame;
 
 import TestGame.Enemy;
 
-public class GameWindow extends JFrame {
+public final class GameWindow extends JFrame {
 	
-	private boolean isRunning;
-	private GamePanel gamePanel;
-	private State state;
-	private InputHandler inputHandler;
+	private static boolean isRunning;
+	private static GamePanel gamePanel;
+	private static State state;
+	private static InputHandler inputHandler;
 	
 	public void run() {
 		initialize();
@@ -21,13 +21,13 @@ public class GameWindow extends JFrame {
 		}
 	}
 	
-	public void initialize() {
+	public static void initialize() {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
 		addKeyListener(inputHandler);
 	}
 
-	public void update() {
+	public static void update() {
 		for (Sprite sprite: state.getSprites())
 			sprite.update();
 	}
@@ -36,7 +36,7 @@ public class GameWindow extends JFrame {
 		gamePanel.paint(getGraphics());
 	}
 
-	public GameWindow(String windowName, int width, int height){
+	private GameWindow(String windowName, int width, int height){
 		super(windowName);
 		setSize(width, height);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,11 +45,15 @@ public class GameWindow extends JFrame {
 		inputHandler = new InputHandler();
 	}
 	
-	public State getGameState(){
-		return this.state;
+	public static GameWindow getInstance(String windowName, int width, int height){
+		return new GameWindow(windowName, width, height);
 	}
 	
-	public InputHandler getInputHandler(){
+	public static State getGameState(){
+		return state;
+	}
+	
+	public static InputHandler getInputHandler(){
 		return inputHandler;
 	}
 
