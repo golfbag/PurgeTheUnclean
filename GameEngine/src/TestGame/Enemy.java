@@ -13,7 +13,7 @@ public class Enemy extends Sprite {
 
 	public void update() {
 		if(GameWindow.getInputHandler().isKey(KeyEvent.VK_UP))
-			setY(40);
+			setY(getYPos() - 1);
 		
 	}
 	
