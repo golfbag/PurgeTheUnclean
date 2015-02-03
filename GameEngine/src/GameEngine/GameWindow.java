@@ -14,7 +14,7 @@ public final class GameWindow extends JFrame {
 	private static State state;
 	private static InputHandler inputHandler;
 	private Timer timer;
-	
+	private PhysicsEngine physicsEngine;
 	public void run() {
 		initialize();
 		timer = new Timer();
@@ -36,11 +36,16 @@ public final class GameWindow extends JFrame {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
 		addKeyListener(inputHandler);
+		physicsEngine.setZero(400);
 	}
 
 	public void update() {
-		for (Sprite sprite : state.getSprites())
+		for (Sprite sprite : state.getSprites()){
 			sprite.update();
+			if (sprite.getHasPhysics() == true)
+				physicsEngine.doGravity(sprite);
+		}
+				
 	}
 
 	public void draw() {
@@ -54,7 +59,9 @@ public final class GameWindow extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		state = new State();
+		
 		inputHandler = new InputHandler();
+		physicsEngine = new PhysicsEngine();
 	}
 	
 	public static GameWindow getInstance(String windowName, int width, int height){
