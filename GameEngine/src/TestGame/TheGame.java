@@ -9,7 +9,6 @@ public class TheGame {
 
 	public static void main(String[] args) {
 		GameWindow.createInstance("Test", 640, 480, 400);
-
 		
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0,0, "bakgrund");
