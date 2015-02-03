@@ -18,7 +18,7 @@ public final class GameWindow extends JFrame {
 	public void run() {
 		initialize();
 		timer = new Timer();
-		timer.schedule(new GameLoop(), 0, 1000 / 30);
+		timer.schedule(new GameLoop(), 0, 1000 / 10);
 	}
 
 	private class GameLoop extends java.util.TimerTask {
