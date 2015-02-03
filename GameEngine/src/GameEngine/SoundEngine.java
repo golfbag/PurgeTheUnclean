@@ -12,4 +12,8 @@ public final class SoundEngine {
 	public static void loopSound(String name){
 		Loader.getSound(name).loop();
 	}
+	
+	public static void stopSound(String name){
+		Loader.getSound(name).stop();
+	}
 }

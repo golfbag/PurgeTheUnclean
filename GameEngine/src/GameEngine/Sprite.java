@@ -22,7 +22,7 @@ public abstract class Sprite extends GameObject {
 	
 	@Override
 	public void draw(Graphics2D g){
-		g.drawImage(this.getImage(), getXPos(), getYPos(), getImage()
+		g.drawImage(getImage(), getXPos(), getYPos(), getImage()
 				.getWidth(), getImage().getHeight(), null);
 	}
 }

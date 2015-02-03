@@ -12,8 +12,6 @@ public final class GameWindow extends JFrame {
 	private GamePanel gamePanel;
 	private static State state;
 	private static InputHandler inputHandler;
-	private static int height;
-	private static int width;
 	
 	
 	public void run() {
@@ -41,21 +39,11 @@ public final class GameWindow extends JFrame {
 
 	private GameWindow(String windowName, int windowWidth, int windowHeight){
 		super(windowName);
-		width = windowWidth;
-		height = windowHeight;
 		setSize(windowWidth, windowHeight);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		state = new State();
 		inputHandler = new InputHandler();
-	}
-	
-	public static int getWindowHeight(){
-		return height;
-	}
-	
-	public static int getWindowWidth(){
-		return width;
 	}
 	
 	public static GameWindow getInstance(String windowName, int width, int height){

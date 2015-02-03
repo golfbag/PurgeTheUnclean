@@ -18,4 +18,8 @@ public class Sound {
 	public void loop() {
 		sound.loop();
 	}
+
+	public void stop() {
+		sound.stop();		
+	}
 }

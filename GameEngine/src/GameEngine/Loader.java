@@ -15,27 +15,27 @@ public final class Loader {
 	
 	private Loader(){}
 	
-	public static void loadImage(String name, String filePath){
+	public static void loadImage(String imageID, String filePath){
 		try {
-		    imageMap.put(name, ImageIO.read(new File(filePath)));
+		    imageMap.put(imageID, ImageIO.read(new File(filePath)));
 		} catch (IOException e) {
 			System.out.println("Failed to load image!");
 		}
 	}
 	
-	public static void loadSound(String name, URL filePath){
+	public static void loadSound(String soundID, URL filePath){
 		try {
-		    soundMap.put(name, new Sound(filePath));
+		    soundMap.put(soundID, new Sound(filePath));
 		} catch (Exception e) {
 			System.out.println("Failed to load sound!");
 		}
 	}
 	
-	public static BufferedImage getImage(String name){
-		return imageMap.get(name);
+	public static BufferedImage getImage(String imageID){
+		return imageMap.get(imageID);
 	}
 	
-	public static Sound getSound(String name){
-		return soundMap.get(name);
+	public static Sound getSound(String soundID){
+		return soundMap.get(soundID);
 	}
 }
