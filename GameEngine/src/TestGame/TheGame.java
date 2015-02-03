@@ -8,16 +8,16 @@ import GameEngine.*;
 public class TheGame {
 
 	public static void main(String[] args) {
-		GameWindow game = GameWindow.getInstance("Test", 640, 480 , 400);
+		GameWindow.createInstance("Test", 640, 480, 400);
+
 		
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0,0, "bakgrund");
-		game.getGameState().addSprite(bakgrund);
+		GameWindow.getInstance().getGameState().addSprite(bakgrund);
 		
 		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien.png");
 		Enemy fiende = new Enemy(20, 50, "alien");
-		game.getGameState().addSprite(fiende);
-		
+		GameWindow.getInstance().getGameState().addSprite(fiende);
 		
 		try {
 			Loader.loadSound(
@@ -34,7 +34,7 @@ public class TheGame {
 			e.printStackTrace();
 		}
 		
-		game.run();
+		GameWindow.getInstance().run();
 		
 		
 	}
