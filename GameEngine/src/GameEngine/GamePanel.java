@@ -13,7 +13,7 @@ public class GamePanel extends JPanel {
 	
 	@Override
  	public void paint(Graphics g){
-		g.clearRect(0, 0, 680, 480);
+		g.clearRect(0, 0, GameWindow.getWindowWidth(), GameWindow.getWindowHeight());
 		Renderer.render(state, g);
  		repaint();
  	}
