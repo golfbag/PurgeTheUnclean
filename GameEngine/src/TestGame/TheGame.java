@@ -1,19 +1,14 @@
 package TestGame;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import javax.swing.JPanel;
 
 import GameEngine.*;
 
 public class TheGame {
 
 	public static void main(String[] args) {
-		GameWindow game = GameWindow.getInstance("Test", 640, 480);
+		GameWindow game = GameWindow.getInstance("Test", 640, 480 , 400);
 		
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0,0, "bakgrund");

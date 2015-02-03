@@ -2,22 +2,21 @@ package GameEngine;
 
 public class PhysicsEngine {
 	
-	private int zero;
+	private int zeroPoint;
 	
 	public void doGravity(Sprite sprite){
-		if(sprite.getYPos() >= zero)
-			sprite.setY(zero);
+		if(sprite.getYPos() >= zeroPoint)
+			sprite.setY(zeroPoint);
 		else
-			sprite.setY(sprite.getYPos() + 6);
-			
+			sprite.setY(sprite.getYPos() + 6);		
 	}
 
-	public int getZero() {
-		return zero;
+	public int getZeroPoint() {
+		return zeroPoint;
 	}
 
-	public void setZero(int zero) {
-		this.zero = zero;
+	public void setZeroPoint(int zeroPoint) {
+		this.zeroPoint = zeroPoint;
 	}
 
 }

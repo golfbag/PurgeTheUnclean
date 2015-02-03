@@ -36,7 +36,7 @@ public final class GameWindow extends JFrame {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
 		addKeyListener(inputHandler);
-		physicsEngine.setZero(400);
+		
 	}
 
 	public void update() {
@@ -52,21 +52,21 @@ public final class GameWindow extends JFrame {
 		gamePanel.paintComponent(getGraphics());
 	}
 
-	private GameWindow(String windowName, int windowWidth, int windowHeight){
+	private GameWindow(String windowName, int windowWidth, int windowHeight,int ZeroPoint){
 
 		super(windowName);
 		setSize(windowWidth, windowHeight);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		state = new State();
-		
 		inputHandler = new InputHandler();
 		physicsEngine = new PhysicsEngine();
+		physicsEngine.setZeroPoint(ZeroPoint);
 	}
 	
-	public static GameWindow getInstance(String windowName, int width, int height){
+	public static GameWindow getInstance(String windowName, int width, int height,int ZeroPoint){
 
-		return new GameWindow(windowName, width, height);
+		return new GameWindow(windowName, width, height, ZeroPoint);
 	}
 
 	public static State getGameState() {
