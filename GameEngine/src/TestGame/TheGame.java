@@ -19,6 +19,7 @@ public class TheGame {
 		Enemy fiende = new Enemy(20, 50, "alien");
 		GameWindow.getInstance().getGameState().addSprite(fiende);
 		
+		
 		try {
 			Loader.loadSound(
 					"helicopter",
