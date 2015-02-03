@@ -1,11 +1,7 @@
 package GameEngine;
 
-import java.awt.event.KeyEvent;
 import java.util.Timer;
-
 import javax.swing.JFrame;
-
-import TestGame.Enemy;
 
 public final class GameWindow extends JFrame {
 
@@ -14,9 +10,10 @@ public final class GameWindow extends JFrame {
 	private State state;
 	private InputHandler inputHandler;
 	private static GameWindow instance;
-	
+
 	private Timer timer;
 	private PhysicsEngine physicsEngine;
+
 	public void run() {
 		initialize();
 		timer = new Timer();
@@ -38,41 +35,42 @@ public final class GameWindow extends JFrame {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
 		addKeyListener(inputHandler);
-		
+
 	}
 
 	public void update() {
-		for (Sprite sprite : state.getSprites()){
+		for (Sprite sprite : state.getSprites()) {
 			sprite.update();
 			if (sprite.getHasPhysics() == true)
 				physicsEngine.doGravity(sprite);
 		}
-				
+
 	}
 
 	public void draw() {
 		gamePanel.paintComponent(getGraphics());
 	}
 
-
-	private GameWindow(String windowName, int windowWidth, int windowHeight,int zeroPoint){
+	private GameWindow(String windowName, int windowWidth, int windowHeight,
+			int zeroPoint) {
 		super(windowName);
 		setSize(windowWidth, windowHeight);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		state = new State();
 		inputHandler = new InputHandler();
-		physicsEngine = new PhysicsEngine();
-		physicsEngine.setZeroPoint(zeroPoint);
+		physicsEngine = new PhysicsEngine(zeroPoint, 6);
 	}
 
-	public static void createInstance(String windowName, int windowWidth, int windowHeight, int zeroPoint){
-		if(instance == null){
-			instance = new GameWindow(windowName, windowWidth, windowHeight, zeroPoint);
+	public static void createInstance(String windowName, int windowWidth,
+			int windowHeight, int zeroPoint) {
+		if (instance == null) {
+			instance = new GameWindow(windowName, windowWidth, windowHeight,
+					zeroPoint);
 		}
 	}
-	
-	public static GameWindow getInstance(){
+
+	public static GameWindow getInstance() {
 		return instance;
 	}
 
@@ -82,6 +80,10 @@ public final class GameWindow extends JFrame {
 
 	public InputHandler getInputHandler() {
 		return inputHandler;
+	}
+	
+	public PhysicsEngine getPhysicsEngine() {
+		return physicsEngine;
 	}
 
 }

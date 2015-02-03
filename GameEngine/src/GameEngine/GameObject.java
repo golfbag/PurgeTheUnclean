@@ -7,12 +7,16 @@ public abstract class GameObject {
 	
 	private int xPos;
 	private int yPos;
+	private int height;
+	private int width;
 	private final String imageID;
 	
 	public GameObject(int xPos, int yPos, String imageID){
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.imageID = imageID;
+		this.width = getImage().getWidth();
+		this.height = getImage().getHeight();
 	}
 
 	public String getImageID() {
@@ -24,8 +28,7 @@ public abstract class GameObject {
 	}
 
 	public void draw(Graphics2D g){
-		g.drawImage(getImage(), getXPos(), getYPos(), getImage()
-				.getWidth(), getImage().getHeight(), null);
+		g.drawImage(getImage(), xPos, yPos, width, height, null);
 	}
 	
 	public int getXPos() {
@@ -34,6 +37,14 @@ public abstract class GameObject {
 	
 	public int getYPos() {
 		return yPos;
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	public int getWidth() {
+		return width;
 	}
 	
 	public void setX(int xPos) {
