@@ -9,6 +9,9 @@ public class Enemy extends Sprite {
 
 	public Enemy(int xPos, int yPos, String fileName) {
 		super(xPos, yPos, fileName);
+		System.out.println(getHasPhysics());
+		setHasPhysics(true);
+		System.out.println(getHasPhysics());
 	}
 
 	public void update() {
@@ -21,5 +24,4 @@ public class Enemy extends Sprite {
 		if(GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_RIGHT))
 			setX(getXPos() +1 );
 	}
-	
 }
