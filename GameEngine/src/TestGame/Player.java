@@ -17,9 +17,8 @@ public class Player extends Sprite {
 		for (Sprite otherSprite : GameWindow.getInstance().getGameState()
 				.getSprites()) {
 			if (this != otherSprite)
-				if ((GameWindow.getInstance().getPhysicsEngine()
-						.checkCollision(this, otherSprite)))
-					System.out.println("BAAAM");
+				if ((GameWindow.getInstance().getPhysicsEngine().checkCollision(this, otherSprite)))
+						otherSprite.setAlive(false);
 		}
 
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_UP))

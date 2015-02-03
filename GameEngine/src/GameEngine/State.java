@@ -10,12 +10,17 @@ public class State implements Serializable {
 	public ArrayList<Sprite> getSprites() {
 		return sprites;
 	}
-	
-	public void addSprite(Sprite sprite){
+
+	public void addSprite(Sprite sprite) {
 		sprites.add(sprite);
 	}
-	
-	public void removeSprite(Sprite sprite){
-		sprites.remove(sprite);
+
+	public void removeSprite(Sprite sprite) {
+		Iterator<Sprite> i = sprites.iterator();
+		while (i.hasNext()) {
+			Sprite nextSprite = i.next();
+			if (nextSprite == sprite)
+				i.remove();
+		}
 	}
 }
