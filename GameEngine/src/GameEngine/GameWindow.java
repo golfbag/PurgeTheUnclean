@@ -46,7 +46,7 @@ public final class GameWindow extends JFrame {
 	}
 
 	public void draw() {
-		gamePanel.paint(getGraphics());
+		gamePanel.paintComponent(getGraphics());
 	}
 
 	private GameWindow(String windowName, int windowWidth, int windowHeight){
