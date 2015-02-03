@@ -9,6 +9,10 @@ public class TheGame {
 
 	public static void main(String[] args) {
 		GameWindow.createInstance("Test", 640, 480, 400);
+<<<<<<< HEAD
+=======
+		
+>>>>>>> origin/master
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0, 0, "bakgrund");
 		GameWindow.getInstance().getGameState().addSprite(bakgrund);
@@ -18,7 +22,12 @@ public class TheGame {
 		GameWindow.getInstance().getGameState().addSprite(player);
 		Enemy fiende = new Enemy(20, 100, "alien");
 		GameWindow.getInstance().getGameState().addSprite(fiende);
+<<<<<<< HEAD
 
+=======
+		
+		
+>>>>>>> origin/master
 		try {
 			Loader.loadSound(
 					"helicopter",
