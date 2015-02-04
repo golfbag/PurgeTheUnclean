@@ -11,7 +11,7 @@ public class TheGame {
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0, 0, "bakgrund");
 
-		GameWindow.createInstance("Test", 640, 480, bakgrund, 400, 6);
+		GameWindow.createInstance("Test", 640, 480, bakgrund, 400, 60f);
 
 		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien2.png");
 		Player player = new Player(20, 50, "alien");

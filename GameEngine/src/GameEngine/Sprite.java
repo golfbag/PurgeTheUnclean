@@ -4,7 +4,8 @@ public abstract class Sprite extends GameObject {
 	private boolean hasPhysics;
 	private boolean isCollidable;
 	private boolean isAlive;
-	
+	private float acceleration = -9.8f;
+	private float velocity = 0.0f;
 	public Sprite(int xPos, int yPos, String imageID) {
 		super(xPos, yPos, imageID);
 		isAlive = true;
@@ -12,16 +13,18 @@ public abstract class Sprite extends GameObject {
 	
 	public abstract void update();
 	
-	public abstract void doCollision();
+	public abstract void doCollision(Sprite otherSprite);
 	
 	public boolean getHasPhysics(){
 		return hasPhysics;
 	}
 	
 	public void move(int dx, int dy){
-		long delta = System.currentTimeMillis() - GameWindow.getInstance().getLastLoopTime();
+		
+		long delta = GameWindow.getInstance().getDelta();
 		setX(getXPos() + (int) ((delta * dx) / 1000));
 		setY(getYPos() + (int) ((delta * dy) / 1000));
+		
 	}
 		
 	public void setHasPhysics(boolean hasPhysics){

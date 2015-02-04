@@ -12,9 +12,10 @@ public final class GameWindow extends JFrame {
 	private KeyHandler keyHandler;
 	private static GameWindow instance;
 	private long startTime; 
-	private long lastLoopTime;
+	private long lastLoopTime = System.currentTimeMillis();
 	private Timer timer;
 	private PhysicsEngine physicsEngine;
+	private long delta;
 
 	public void run() {
 		initialize();
@@ -25,6 +26,7 @@ public final class GameWindow extends JFrame {
 
 	private class GameLoop extends java.util.TimerTask {
 		public void run() {
+			delta = System.currentTimeMillis() - lastLoopTime;
 			lastLoopTime = System.currentTimeMillis();
 			update();
 			draw();
@@ -62,7 +64,7 @@ public final class GameWindow extends JFrame {
 	}
 
 	private GameWindow(String windowName, int windowWidth, int windowHeight,
-			GameObject background, int zeroPoint, int gravity) {
+			GameObject background, int zeroPoint, float gravity) {
 		super(windowName);
 		setSize(windowWidth, windowHeight);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -73,7 +75,7 @@ public final class GameWindow extends JFrame {
 	}
 
 	public static void createInstance(String windowName, int windowWidth,
-			int windowHeight, GameObject backgrund, int zeroPoint, int gravity) {
+			int windowHeight, GameObject backgrund, int zeroPoint, float gravity) {
 		if (instance == null) {
 			instance = new GameWindow(windowName, windowWidth, windowHeight,
 					backgrund, zeroPoint, gravity);
@@ -103,5 +105,7 @@ public final class GameWindow extends JFrame {
 	public PhysicsEngine getPhysicsEngine() {
 		return physicsEngine;
 	}
-
+	public long getDelta(){
+		return delta;
+	}
 }

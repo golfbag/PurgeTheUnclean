@@ -5,9 +5,11 @@ import java.awt.Rectangle;
 public class PhysicsEngine {
 
 	private int zeroPoint;
-	private int gravity;
-
-	public PhysicsEngine(int zeroPoint, int gravity) {
+	private float gravity = -0.0f;
+	private float velocity = 0.0f;
+	private float maxVelocity = 500;
+	
+	public PhysicsEngine(int zeroPoint, float gravity) {
 		this.zeroPoint = zeroPoint;
 		this.gravity = gravity;
 	}
@@ -15,8 +17,12 @@ public class PhysicsEngine {
 	public void doGravity(Sprite sprite) {
 		if (sprite.getYPos() >= zeroPoint)
 			sprite.setY(zeroPoint);
-		else
-			sprite.setY(sprite.getYPos() + gravity);
+		else{
+			long delta = GameWindow.getInstance().getDelta();
+			if (velocity <= maxVelocity)
+				velocity += (gravity * delta)/1000;
+			sprite.setY(sprite.getYPos() + (int) (0.5 * velocity * delta)/1000);
+		}	
 	}
 
 	public boolean checkCollision(Sprite sprite1, Sprite sprite2) {
@@ -33,7 +39,7 @@ public class PhysicsEngine {
 		for (Sprite sprite2: GameWindow.getInstance().getGameState().getSprites()){
 			if (sprite != sprite2  && sprite2.isCollidable()){
 				if(checkCollision(sprite, sprite2))
-					sprite.doCollision();
+					sprite.doCollision(sprite2);
 			}
 		}			
 	}
@@ -46,12 +52,20 @@ public class PhysicsEngine {
 		this.zeroPoint = zeroPoint;
 	}
 
-	public int getGravity() {
+	public float getGravity() {
 		return gravity;
 	}
 
 	public void setGravity(int gravity) {
 		this.gravity = gravity;
+	}
+
+	public float getMaxVelocity() {
+		return maxVelocity;
+	}
+
+	public void setMaxVelocity(float maxVelocity) {
+		this.maxVelocity = maxVelocity;
 	}
 
 }
