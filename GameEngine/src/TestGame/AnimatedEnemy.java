@@ -15,11 +15,9 @@ public class AnimatedEnemy extends AnimatedSprite {
 	@Override
 	public void update() {
 		
-		runAnimation(100, 5);
+		runAnimation(100);
 		
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_W)){
-			if (getAnimation().getCurrentRow() != 2)
-				getAnimation().setCurrentRow(2);
 			setY(getYPos() - 10);
 		}
 			
@@ -27,14 +25,11 @@ public class AnimatedEnemy extends AnimatedSprite {
 			setY(getYPos() + 8);
 		
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_A)){
-			if (getAnimation().getCurrentRow() != 1)
-				getAnimation().setCurrentRow(1);;
 			setX(getXPos() - 8);
 		}
 			
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_D)){
-			if (getAnimation().getCurrentRow() != 1)
-				getAnimation().setCurrentRow(1);
+	
 			setX(getXPos() + 8);
 		}
 			
