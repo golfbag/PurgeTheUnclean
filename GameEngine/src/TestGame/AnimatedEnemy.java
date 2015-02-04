@@ -11,8 +11,14 @@ public class AnimatedEnemy extends AnimatedSprite {
 
 	@Override
 	public void update() {
-		long currentTime = System.currentTimeMillis() - GameWindow.getInstance().getStartTime();
-		setFrame((int) (currentTime/500) % 2);		
+		long timeElapsed = System.currentTimeMillis() - GameWindow.getInstance().getStartTime();
+		setFrame((int) (timeElapsed/500) % 2);		
+	}
+
+	@Override
+	public void doCollision() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
