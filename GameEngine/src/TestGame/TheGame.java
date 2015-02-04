@@ -10,19 +10,19 @@ public class TheGame {
 	public static void main(String[] args) {
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0, 0, "bakgrund");
-		
+
 		GameWindow.createInstance("Test", 640, 480, bakgrund, 400);
-		
+
 		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien2.png");
 		Player player = new Player(20, 50, "alien");
 		GameWindow.getInstance().getGameState().addSprite(player);
 		Enemy fiende = new Enemy(200, 100, "alien");
 		GameWindow.getInstance().getGameState().addSprite(fiende);
-		
+
 		Loader.loadImage("fågel", "C:/Users/Fabian/Pictures/fågel.png");
-		Animation animation = new Animation(1, 1, 73, 67,"fågel");
+		Animation animation = new Animation(1, 1, 73, 67, "fågel", 5, 2);
 		AnimatedEnemy fiende2 = new AnimatedEnemy(100, 100, animation);
-		
+
 		GameWindow.getInstance().getGameState().addSprite(fiende2);
 		try {
 			Loader.loadSound(

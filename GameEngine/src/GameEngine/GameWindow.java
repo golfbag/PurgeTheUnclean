@@ -1,5 +1,7 @@
 package GameEngine;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Iterator;
 import java.util.Timer;
 
@@ -39,7 +41,7 @@ public final class GameWindow extends JFrame {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
 		addKeyListener(keyHandler);
-
+		addMouseListener(new MouseHandler());
 	}
 
 	public void update() {

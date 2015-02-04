@@ -30,8 +30,14 @@ public abstract class AnimatedSprite extends Sprite {
 		this.animation = animation;
 	}
 	
-	public void runAnimation(int timePerFrame, int numberOfFrames ){
+	public void runAnimation(int timePerFrame){
 		long timeElapsed = System.currentTimeMillis() - GameWindow.getInstance().getStartTime();
-		getAnimation().setCurrentFrame((int) (timeElapsed/timePerFrame) % numberOfFrames);
+		animation.setCurrentFrame((int) (timeElapsed/timePerFrame) % animation.getNumberOfFrames());
+		if (animation.getCurrentFrame() == animation.getNumberOfFrames()-1)
+			if (animation.getCurrentRow() == animation.getNumberOfRows())
+				animation.setCurrentRow(1);
+			else{
+				animation.setCurrentRow(animation.getCurrentRow()+1);
+			}
 	}
 }
