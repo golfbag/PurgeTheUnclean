@@ -5,8 +5,8 @@ import GameEngine.GameWindow;
 
 public class AnimatedEnemy extends AnimatedSprite {
 
-	public AnimatedEnemy(int xPos, int yPos, String fileName, int frame, int row) {
-		super(xPos, yPos, fileName, frame, row);
+	public AnimatedEnemy(int xPos, int yPos, int frameWidth, int frameHeight, String fileName, int frame, int row) {
+		super(xPos, yPos, frameWidth, frameHeight, fileName, frame, row);
 	}
 
 	@Override

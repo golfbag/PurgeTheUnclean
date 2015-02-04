@@ -6,16 +6,20 @@ import java.awt.image.BufferedImage;
 public abstract class AnimatedSprite extends Sprite {
 	private int currentFrame;
 	private int currentRow;
+	private int frameWidth;
+	private int frameHeight;
 
-	public AnimatedSprite(int xPos, int yPos, String fileName, int frame, int row) {
+	public AnimatedSprite(int xPos, int yPos, int frameWidth, int frameHeight, String fileName, int frame, int row) {
 		super(xPos, yPos, fileName);
 		setFrame(frame);
 		setRow(row);
+		this.frameWidth = frameWidth;
+		this.frameHeight = frameHeight;
 	}
 	
 	public void draw(Graphics g){
-		BufferedImage currentSprite = Loader.getImage(getImageID()).getSubimage(getXPos()*currentFrame, getYPos()*(currentRow-1), getWidth(), getHeight());
-		g.drawImage(currentSprite, getXPos(), getYPos(), getWidth(), getHeight(), null);
+		BufferedImage currentSprite = Loader.getImage(getImageID()).getSubimage(frameWidth*currentFrame, frameHeight*(currentRow-1), frameWidth, frameHeight);
+		g.drawImage(currentSprite, getXPos(), getYPos(), frameWidth, frameHeight, null);
 	}
 	
 	public int getFrame(){
