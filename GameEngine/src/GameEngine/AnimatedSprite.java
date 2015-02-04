@@ -1,8 +1,11 @@
 package GameEngine;
 
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+
 public abstract class AnimatedSprite extends Sprite {
-	private int countFrame;
-	private int countRow;
+	private int currentFrame;
+	private int currentRow;
 
 	public AnimatedSprite(int xPos, int yPos, String fileName, int frame, int row) {
 		super(xPos, yPos, fileName);
@@ -10,20 +13,25 @@ public abstract class AnimatedSprite extends Sprite {
 		setRow(row);
 	}
 	
+	public void draw(Graphics g){
+		BufferedImage currentSprite = Loader.getImage(getImageID()).getSubimage(getXPos()*currentFrame, getYPos()*(currentRow-1), getWidth(), getHeight());
+		g.drawImage(currentSprite, getXPos(), getYPos(), getWidth(), getHeight(), null);
+	}
+	
 	public int getFrame(){
-		return countFrame;
+		return currentFrame;
 	}
 	
 	public int getRow(){
-		return countRow;
+		return currentRow;
 	}
 	
 	public void setFrame(int frame){
-		this.countFrame = frame;
+		this.currentFrame = frame;
 	}
 	
 	public void setRow(int row){
-		this.countRow = row;
+		this.currentRow = row;
 	}
 
 }

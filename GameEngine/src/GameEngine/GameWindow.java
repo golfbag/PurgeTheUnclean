@@ -10,12 +10,14 @@ public final class GameWindow extends JFrame {
 	private State state;
 	private InputHandler inputHandler;
 	private static GameWindow instance;
+	private long startTime; 
 
 	private Timer timer;
 	private PhysicsEngine physicsEngine;
 
 	public void run() {
 		initialize();
+		startTime = System.currentTimeMillis();
 		timer = new Timer();
 		timer.schedule(new GameLoop(), 0, 1000 / 10);
 	}
@@ -68,6 +70,10 @@ public final class GameWindow extends JFrame {
 			instance = new GameWindow(windowName, windowWidth, windowHeight,
 					zeroPoint);
 		}
+	}
+	
+	public long getStartTime(){
+		return startTime;
 	}
 
 	public static GameWindow getInstance() {

@@ -21,11 +21,11 @@ public class PhysicsEngine {
 
 	public boolean checkCollision(Sprite sprite1, Sprite sprite2) {
 		if (sprite1.isCollidable() && sprite2.isCollidable()){
-			Rectangle rectangle = new Rectangle(sprite1.getXPos(),
+			Rectangle rectangle1 = new Rectangle(sprite1.getXPos(),
 					sprite1.getYPos(), sprite1.getWidth(), sprite1.getHeight());
 			Rectangle rectangle2 = new Rectangle(sprite2.getXPos(),
 					sprite2.getYPos(), sprite2.getWidth(), sprite2.getHeight());
-			return rectangle.getBounds().intersects(rectangle2.getBounds());
+			return rectangle1.getBounds().intersects(rectangle2.getBounds());
 		}else
 			return false;
 	}
