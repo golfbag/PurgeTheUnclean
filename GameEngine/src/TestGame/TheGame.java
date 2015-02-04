@@ -20,7 +20,9 @@ public class TheGame {
 		GameWindow.getInstance().getGameState().addSprite(fiende);
 		
 		Loader.loadImage("fågel", "C:/Users/Fabian/Pictures/fågel.png");
-		AnimatedEnemy fiende2 = new AnimatedEnemy(100, 100, "fågel", 0, 0);
+		Animation animation = new Animation(1, 1, 73, 67,"fågel");
+		AnimatedEnemy fiende2 = new AnimatedEnemy(100, 100, animation);
+		
 		GameWindow.getInstance().getGameState().addSprite(fiende2);
 		try {
 			Loader.loadSound(

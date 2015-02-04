@@ -1,41 +1,37 @@
 package GameEngine;
 
-import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 public abstract class AnimatedSprite extends Sprite {
-	private int currentFrame;
-	private int currentRow;
-	private int frameWidth;
-	private int frameHeight;
+	private Animation animation;
 
-	public AnimatedSprite(int xPos, int yPos, int frameWidth, int frameHeight, String fileName, int frame, int row) {
-		super(xPos, yPos, fileName);
-		setFrame(frame);
-		setRow(row);
-		this.frameWidth = frameWidth;
-		this.frameHeight = frameHeight;
-	}
-	
-	public void draw(Graphics g){
-		BufferedImage currentSprite = Loader.getImage(getImageID()).getSubimage(frameWidth*currentFrame, frameHeight*(currentRow-1), frameWidth, frameHeight);
-		g.drawImage(currentSprite, getXPos(), getYPos(), frameWidth, frameHeight, null);
-	}
-	
-	public int getFrame(){
-		return currentFrame;
-	}
-	
-	public int getRow(){
-		return currentRow;
-	}
-	
-	public void setFrame(int frame){
-		this.currentFrame = frame;
-	}
-	
-	public void setRow(int row){
-		this.currentRow = row;
+	public AnimatedSprite(int xPos, int yPos, Animation animation) {
+		super(xPos, yPos, animation.getFileName());
+		this.animation = animation;
 	}
 
+	@Override
+	public void draw(Graphics2D g) {
+		BufferedImage currentSprite = Loader
+				.getImage(getImageID())
+				.getSubimage(
+						animation.getFrameWidth() * animation.getCurrentFrame(),
+						animation.getFrameHeight()
+								* (animation.getCurrentRow() - 1),
+						animation.getFrameWidth(), animation.getFrameHeight());
+		g.drawImage(currentSprite, getXPos(), getYPos(),
+				animation.getFrameWidth(), animation.getFrameHeight(), null);
+	}
+	public Animation getAnimation(){
+		return animation;
+	}
+	public void setAnimation(Animation animation){
+		this.animation = animation;
+	}
+	
+	public void runAnimation(int timePerFrame, int numberOfFrames ){
+		long timeElapsed = System.currentTimeMillis() - GameWindow.getInstance().getStartTime();
+		getAnimation().setCurrentFrame((int) (timeElapsed/timePerFrame) % numberOfFrames);
+	}
 }
