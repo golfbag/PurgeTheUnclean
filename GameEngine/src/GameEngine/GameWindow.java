@@ -1,6 +1,8 @@
 package GameEngine;
 
+import java.util.Iterator;
 import java.util.Timer;
+
 import javax.swing.JFrame;
 
 public final class GameWindow extends JFrame {
@@ -39,15 +41,17 @@ public final class GameWindow extends JFrame {
 	}
 
 	public void update() {
-		for (Sprite sprite : state.getSprites()) {
-			if (!sprite.isAlive())
-				state.removeSprite(sprite);
-			else{
-				sprite.update();
-				if (sprite.getHasPhysics() == true)
-					physicsEngine.doGravity(sprite);
+		for (int j = state.getSprites().size() -1 ; j >= 0; j--)
+			if (!state.getSprites().get(j).isAlive()){
+				state.removeSprite(state.getSprites().get(j));
+				return;
 			}
-		}
+		
+		for (Sprite sprite : state.getSprites()){
+			sprite.update();
+			if (sprite.getHasPhysics() == true)
+				physicsEngine.doGravity(sprite);
+		}		
 	}
 
 	public void draw() {

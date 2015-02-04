@@ -16,11 +16,6 @@ public class State implements Serializable {
 	}
 
 	public void removeSprite(Sprite sprite) {
-		Iterator<Sprite> i = sprites.iterator();
-		while (i.hasNext()) {
-			Sprite nextSprite = i.next();
-			if (nextSprite == sprite)
-				i.remove();
-		}
+		sprites.remove(sprite);
 	}
 }
