@@ -8,7 +8,6 @@ public class MouseHandler implements MouseListener{
 	@Override
 	public void mouseClicked(MouseEvent mve) {
 		System.out.println(mve);
-		
 	}
 
 	@Override
