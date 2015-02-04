@@ -18,19 +18,18 @@ public class AnimatedEnemy extends AnimatedSprite {
 		runAnimation(100);
 		
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_W)){
-			setY(getYPos() - 10);
+			move(0, 10);
 		}
 			
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_S))
-			setY(getYPos() + 8);
+			move(0, -10);
 		
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_A)){
-			setX(getXPos() - 8);
+			move(-10, 0);
 		}
 			
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_D)){
-	
-			setX(getXPos() + 8);
+			move(10, 0);
 		}
 			
 		
