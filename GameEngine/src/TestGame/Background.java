@@ -16,4 +16,10 @@ public class Background extends Sprite {
 		
 	}
 
+	@Override
+	public void doCollision() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

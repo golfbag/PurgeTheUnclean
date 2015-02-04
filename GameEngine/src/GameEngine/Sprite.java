@@ -13,6 +13,8 @@ public abstract class Sprite extends GameObject {
 	
 	public abstract void update();
 	
+	public abstract void doCollision();
+	
 	public boolean getHasPhysics(){
 		return hasPhysics;
 	}

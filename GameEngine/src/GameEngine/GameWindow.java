@@ -46,8 +46,10 @@ public final class GameWindow extends JFrame {
 			if (!sprite.isAlive()){
 				state.removeSprite(sprite);
 			}else{
+				if (sprite.isCollidable())
+					physicsEngine.doCollision(sprite);
 				sprite.update();
-				if (sprite.getHasPhysics() == true)
+				if (sprite.getHasPhysics())
 					physicsEngine.doGravity(sprite);
 			}	
 		}		
