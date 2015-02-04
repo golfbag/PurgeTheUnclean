@@ -11,14 +11,14 @@ public class TheGame {
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0, 0, "bakgrund");
 		
-		GameWindow.createInstance("Test", 640, 480, null, 400);
+		GameWindow.createInstance("Test", 640, 480, bakgrund, 400);
 		
 
 
 		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien2.png");
 		Player player = new Player(20, 50, "alien");
 		GameWindow.getInstance().getGameState().addSprite(player);
-		Enemy fiende = new Enemy(20, 100, "alien");
+		Enemy fiende = new Enemy(200, 100, "alien");
 		GameWindow.getInstance().getGameState().addSprite(fiende);
 
 		try {

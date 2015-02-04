@@ -18,11 +18,11 @@ public class Player extends Sprite {
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_UP))
 			setY(getYPos() - 10);
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_DOWN))
-			setY(getYPos() + 1);
+			setY(getYPos() + 3);
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_LEFT))
-			setX(getXPos() - 1);
+			setX(getXPos() - 5);
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_RIGHT))
-			setX(getXPos() + 1);
+			setX(getXPos() + 5);
 	}
 
 	@Override
