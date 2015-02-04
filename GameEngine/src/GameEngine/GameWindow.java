@@ -1,6 +1,8 @@
 package GameEngine;
 
+import java.util.Iterator;
 import java.util.Timer;
+
 import javax.swing.JFrame;
 
 public final class GameWindow extends JFrame {
@@ -41,12 +43,18 @@ public final class GameWindow extends JFrame {
 	}
 
 	public void update() {
-		for (Sprite sprite : state.getSprites()) {
-			sprite.update();
-			if (sprite.getHasPhysics() == true)
-				physicsEngine.doGravity(sprite);
+		for (int i = state.getSprites().size() - 1; i >= 0; i--) {
+			Sprite sprite = state.getSprites().get(i);
+			if (!sprite.isAlive()) {
+				state.removeSprite(sprite);
+			} else {
+				if (sprite.isCollidable())
+					physicsEngine.doCollision(sprite);
+				sprite.update();
+				if (sprite.getHasPhysics())
+					physicsEngine.doGravity(sprite);
+			}
 		}
-
 	}
 
 	public void draw() {
@@ -54,21 +62,21 @@ public final class GameWindow extends JFrame {
 	}
 
 	private GameWindow(String windowName, int windowWidth, int windowHeight,
-			int zeroPoint) {
+			GameObject backgrund, int zeroPoint) {
 		super(windowName);
 		setSize(windowWidth, windowHeight);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
-		state = new State();
+		state = new State(backgrund);
 		inputHandler = new InputHandler();
 		physicsEngine = new PhysicsEngine(zeroPoint, 6);
 	}
 
 	public static void createInstance(String windowName, int windowWidth,
-			int windowHeight, int zeroPoint) {
+			int windowHeight, GameObject backgrund, int zeroPoint) {
 		if (instance == null) {
 			instance = new GameWindow(windowName, windowWidth, windowHeight,
-					zeroPoint);
+					backgrund, zeroPoint);
 		}
 	}
 	
@@ -87,7 +95,7 @@ public final class GameWindow extends JFrame {
 	public InputHandler getInputHandler() {
 		return inputHandler;
 	}
-	
+
 	public PhysicsEngine getPhysicsEngine() {
 		return physicsEngine;
 	}

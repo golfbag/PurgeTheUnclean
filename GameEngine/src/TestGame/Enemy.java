@@ -15,4 +15,9 @@ public class Enemy extends Sprite {
 		
 	}
 
+	@Override
+	public void doCollision() {
+		setAlive(false);
+	}
+
 }

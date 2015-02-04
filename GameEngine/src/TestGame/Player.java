@@ -14,13 +14,6 @@ public class Player extends Sprite {
 	}
 
 	public void update() {
-		for (Sprite otherSprite : GameWindow.getInstance().getGameState()
-				.getSprites()) {
-			if (this != otherSprite)
-				if ((GameWindow.getInstance().getPhysicsEngine()
-						.checkCollision(this, otherSprite)))
-					System.out.println("BAAAM");
-		}
 
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_UP))
 			setY(getYPos() - 10);
@@ -30,5 +23,10 @@ public class Player extends Sprite {
 			setX(getXPos() - 1);
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_RIGHT))
 			setX(getXPos() + 1);
+	}
+
+	@Override
+	public void doCollision() {
+		
 	}
 }

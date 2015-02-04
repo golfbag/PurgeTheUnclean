@@ -29,6 +29,14 @@ public class PhysicsEngine {
 		}else
 			return false;
 	}
+	public void doCollision(Sprite sprite){
+		for (Sprite sprite2: GameWindow.getInstance().getGameState().getSprites()){
+			if (sprite != sprite2  && sprite2.isCollidable()){
+				if(checkCollision(sprite, sprite2))
+					sprite.doCollision();
+			}
+		}			
+	}
 
 	public int getZeroPoint() {
 		return zeroPoint;
