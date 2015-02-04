@@ -4,7 +4,7 @@ public abstract class Sprite extends GameObject {
 	private boolean hasPhysics;
 	private boolean isCollidable;
 	private boolean isAlive;
-	private float acceleration = -9.8f;
+	private float acceleration = 30f;
 	private float velocity = 0.0f;
 	public Sprite(int xPos, int yPos, String imageID) {
 		super(xPos, yPos, imageID);
@@ -22,8 +22,18 @@ public abstract class Sprite extends GameObject {
 	public void move(int dx, int dy){
 		
 		long delta = GameWindow.getInstance().getDelta();
-		setX(getXPos() + (int) ((delta * dx) / 1000));
-		setY(getYPos() + (int) ((delta * dy) / 1000));
+		
+		if(dx > 0 || dy > 0)
+			velocity += (acceleration * delta)/1000;
+		else
+			velocity -= (acceleration * delta)/1000;
+		
+		System.out.println(velocity);
+		
+		if(dx != 0)
+			setX(getXPos() + (int) ((0.5 * velocity * delta + dx) / 1000));
+		if (dy!= 0)
+			setY(getYPos() + (int) ((0.5 * velocity * delta + dy) / 1000));
 		
 	}
 		
