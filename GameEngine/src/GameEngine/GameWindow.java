@@ -10,7 +10,7 @@ public final class GameWindow extends JFrame {
 	private boolean isRunning;
 	private GamePanel gamePanel;
 	private State state;
-	private InputHandler inputHandler;
+	private KeyHandler keyHandler;
 	private static GameWindow instance;
 	private long startTime; 
 
@@ -38,7 +38,7 @@ public final class GameWindow extends JFrame {
 	public void initialize() {
 		isRunning = true;
 		gamePanel = new GamePanel(state);
-		addKeyListener(inputHandler);
+		addKeyListener(keyHandler);
 
 	}
 
@@ -68,7 +68,7 @@ public final class GameWindow extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		state = new State(backgrund);
-		inputHandler = new InputHandler();
+		keyHandler = new KeyHandler();
 		physicsEngine = new PhysicsEngine(zeroPoint, 6);
 	}
 
@@ -92,8 +92,8 @@ public final class GameWindow extends JFrame {
 		return state;
 	}
 
-	public InputHandler getInputHandler() {
-		return inputHandler;
+	public KeyHandler getInputHandler() {
+		return keyHandler;
 	}
 
 	public PhysicsEngine getPhysicsEngine() {
