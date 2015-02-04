@@ -17,6 +17,12 @@ public abstract class Sprite extends GameObject {
 	public boolean getHasPhysics(){
 		return hasPhysics;
 	}
+	
+	public void move(int dx, int dy){
+		long delta = System.currentTimeMillis() - GameWindow.getInstance().getLastLoopTime();
+		setX(getXPos() + (int) ((delta * dx) / 1000));
+		setY(getYPos() + (int) ((delta * dy) / 1000));
+	}
 		
 	public void setHasPhysics(boolean hasPhysics){
 		this.hasPhysics = hasPhysics;
