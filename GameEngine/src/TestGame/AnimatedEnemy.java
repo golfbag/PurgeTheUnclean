@@ -21,4 +21,9 @@ public class AnimatedEnemy extends AnimatedSprite {
 		
 	}
 
+	@Override
+	public void doCollision() {
+		
+	}
+
 }
