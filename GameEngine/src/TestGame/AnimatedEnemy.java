@@ -21,9 +21,10 @@ public class AnimatedEnemy extends AnimatedSprite {
 			move(0, 10);
 		}
 			
-		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_S))
+		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_S)){
 			move(0, -10);
-		
+		}
+	
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_A)){
 			move(-10, 0);
 		}
