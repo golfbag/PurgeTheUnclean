@@ -41,16 +41,15 @@ public final class GameWindow extends JFrame {
 	}
 
 	public void update() {
-		for (int j = state.getSprites().size() -1 ; j >= 0; j--)
-			if (!state.getSprites().get(j).isAlive()){
-				state.removeSprite(state.getSprites().get(j));
-				return;
-			}
-		
-		for (Sprite sprite : state.getSprites()){
-			sprite.update();
-			if (sprite.getHasPhysics() == true)
-				physicsEngine.doGravity(sprite);
+		for (int i = state.getSprites().size() -1 ; i >= 0; i--){
+			Sprite sprite = state.getSprites().get(i);
+			if (!sprite.isAlive()){
+				state.removeSprite(sprite);
+			}else{
+				sprite.update();
+				if (sprite.getHasPhysics() == true)
+					physicsEngine.doGravity(sprite);
+			}	
 		}		
 	}
 
