@@ -1,8 +1,5 @@
 package GameEngine;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.Iterator;
 import java.util.Timer;
 
 import javax.swing.JFrame;
@@ -15,7 +12,6 @@ public final class GameWindow extends JFrame {
 	private InputHandler inputHandler;
 	private static GameWindow instance;
 	private long startTime; 
-
 	private Timer timer;
 	private PhysicsEngine physicsEngine;
 
@@ -42,7 +38,6 @@ public final class GameWindow extends JFrame {
 		gamePanel = new GamePanel(state);
 		addKeyListener(inputHandler);
 		addMouseListener(new MouseHandler());
-
 	}
 
 	public void update() {
