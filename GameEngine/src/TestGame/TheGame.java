@@ -8,10 +8,12 @@ import GameEngine.*;
 public class TheGame {
 
 	public static void main(String[] args) {
-		GameWindow.createInstance("Test", 640, 480, 400);
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund.jpg");
 		Background bakgrund = new Background(0, 0, "bakgrund");
-		GameWindow.getInstance().getGameState().addSprite(bakgrund);
+		
+		GameWindow.createInstance("Test", 640, 480, null, 400);
+		
+
 
 		Loader.loadImage("alien", "C:/Users/Fabian/Pictures/alien2.png");
 		Player player = new Player(20, 50, "alien");
