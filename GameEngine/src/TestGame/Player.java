@@ -16,7 +16,7 @@ public class Player extends Sprite {
 	public void update() {
 
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_UP))
-			setY(getYPos() - 10);
+			setY(getYPos() - 30);
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_DOWN))
 			setY(getYPos() + 3);
 		if (GameWindow.getInstance().getInputHandler().isKey(KeyEvent.VK_LEFT))

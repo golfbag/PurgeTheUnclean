@@ -10,7 +10,6 @@ public class KeyHandler implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int keycode = e.getKeyCode();
-		System.out.println(keycode);
 		keys[keycode] = true;
 	}
 

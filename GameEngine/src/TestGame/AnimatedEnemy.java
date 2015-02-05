@@ -11,6 +11,7 @@ public class AnimatedEnemy extends AnimatedSprite {
 
 	public AnimatedEnemy(int xPos, int yPos, Animation animation) {
 		super(xPos, yPos, animation);
+		setHasPhysics(true);
 	}
 
 	@Override
