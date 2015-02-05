@@ -54,7 +54,7 @@ public class AnimatedEnemy extends AnimatedSprite {
 		
 		System.out.println("Let the bodies...");
 		if (getVelocityUpDown() > 100){
-			Animation animation = new Animation(1, 1, 69, 67, "boom", 5, 2);
+			Animation animation = new Animation(1, 1, 69, 67, "boom", 10, 2);
 			setAnimation(animation);
 			isDead =true;
 			

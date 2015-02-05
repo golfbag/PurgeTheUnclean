@@ -29,7 +29,7 @@ public class TheGame {
 		GameWindow.getInstance().getGameState().addSprite(mark);
 		
 		
-		Loader.loadImage("boom", "C:/Users/Fabian/Pictures/BOOM.png");
+		Loader.loadImage("boom", "C:/Users/Fabian/Pictures/BOOMLONG.png");
 //		Animation animation2 = new Animation(1, 1, 69, 67, "boom", 5, 2);
 //		DeadEnemy fiende3 = new DeadEnemy(200, 100, animation2);
 //		GameWindow.getInstance().getGameState().addSprite(fiende3);
