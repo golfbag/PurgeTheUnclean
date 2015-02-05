@@ -21,7 +21,7 @@ public final class GameWindow extends JFrame {
 		initialize();
 		startTime = System.currentTimeMillis();
 		timer = new Timer();
-		timer.schedule(new GameLoop(), 0, 1000 / 30);
+		timer.schedule(new GameLoop(), 0, 1000 / 10);
 	}
 
 	private class GameLoop extends java.util.TimerTask {
@@ -53,10 +53,11 @@ public final class GameWindow extends JFrame {
 				if (sprite.isCollidable())
 					physicsEngine.doCollision(sprite);
 				sprite.update();
-				if (sprite.getHasPhysics())
-					physicsEngine.doPhysics(sprite);
 				if(sprite.getHasGravity())
 					physicsEngine.doGravity(sprite);
+				if (sprite.getHasPhysics())
+					physicsEngine.doPhysics(sprite);
+				
 			}
 		}
 	}
