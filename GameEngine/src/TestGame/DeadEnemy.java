@@ -12,7 +12,8 @@ public class DeadEnemy extends AnimatedSprite{
 
 	@Override
 	public void update() {
-		runAnimation(100);
+		if (getAnimation().getCurrentFrame() != 4 && getAnimation().getCurrentRow() != 2)
+			runAnimation(300);
 	}
 
 	@Override

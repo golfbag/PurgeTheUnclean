@@ -20,31 +20,43 @@ public abstract class AnimatedSprite extends Sprite {
 				.getSubimage(
 						animation.getFrameWidth() * animation.getCurrentFrame(),
 						animation.getFrameHeight()
-								* (animation.getCurrentRow()-1),
+								* (animation.getCurrentRow() - 1),
 						animation.getFrameWidth(), animation.getFrameHeight());
 		g.drawImage(currentSprite, getXPos(), getYPos(),
 				animation.getFrameWidth(), animation.getFrameHeight(), null);
 	}
-	public Animation getAnimation(){
+
+	public Animation getAnimation() {
 		return animation;
 	}
-	public void setAnimation(Animation animation){
+
+	public void setAnimation(Animation animation) {
 		this.animation = animation;
+		setImageID(animation.getFileName());
+		setHeight(animation.getFrameHeight());
+		setWidth(animation.getFrameWidth());
 	}
-	
-	public void runAnimation(int timePerFrame){
-		long timeElapsed = System.currentTimeMillis() - GameWindow.getInstance().getStartTime();
-		animation.setCurrentFrame((int) (timeElapsed/timePerFrame) % animation.getNumberOfFrames());
-//		if (animation.getCurrentFrame() == animation.getNumberOfFrames()-1){
-//			if (animation.getCurrentRow() == animation.getNumberOfRows()){
-//				
-//			}
-//				
-//			else{
-//				System.out.println("AAAAAAAAAA");
-//				animation.setCurrentRow(animation.getCurrentRow()+1);
-//			}
-//	}
+
+	public void runAnimation(int timePerFrame) {
+		long timeElapsed = System.currentTimeMillis()
+				- GameWindow.getInstance().getStartTime();
+		animation.setCurrentFrame((int) (timeElapsed / timePerFrame)
+				% animation.getNumberOfFrames());
+		if (animation.getCurrentFrame() == animation.getNumberOfFrames() - 1) 
+			if (animation.getCurrentRow() == animation.getNumberOfRows()) 
+				animation.setCurrentRow(1);
+			else
+				animation.setCurrentRow(animation.getCurrentRow() + 1);
+		
+	}
+	public void runDeathAnimation(int timePerFrame) {
+		long timeElapsed = System.currentTimeMillis()
+				- GameWindow.getInstance().getStartTime();
+		animation.setCurrentFrame((int) (timeElapsed / timePerFrame)
+				% animation.getNumberOfFrames());
+		if (animation.getCurrentFrame() == animation.getNumberOfFrames()-1){
+			setAlive(false);
 		}
-			
+	}
+
 }

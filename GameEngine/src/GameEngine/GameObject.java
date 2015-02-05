@@ -9,7 +9,7 @@ public abstract class GameObject {
 	private int yPos;
 	private int height;
 	private int width;
-	private final String imageID;
+	private String imageID;
 	
 	public GameObject(int xPos, int yPos, String imageID){
 		this.xPos = xPos;
@@ -21,6 +21,9 @@ public abstract class GameObject {
 
 	public String getImageID() {
 		return imageID;
+	}
+	public void setImageID(String imageID){
+		this.imageID = imageID;
 	}
 	
 	public BufferedImage getImage(){

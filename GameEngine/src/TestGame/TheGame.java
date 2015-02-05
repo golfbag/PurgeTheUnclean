@@ -29,10 +29,11 @@ public class TheGame {
 		GameWindow.getInstance().getGameState().addSprite(mark);
 		
 		
-//		Loader.loadImage("boom", "C:/Users/Fabian/Pictures/BOOMfågel.png");
-//		Animation animation2 = new Animation(1, 1, 73, 67, "boom", 5, 1);
+		Loader.loadImage("boom", "C:/Users/Fabian/Pictures/BOOM.png");
+//		Animation animation2 = new Animation(1, 1, 69, 67, "boom", 5, 2);
 //		DeadEnemy fiende3 = new DeadEnemy(200, 100, animation2);
 //		GameWindow.getInstance().getGameState().addSprite(fiende3);
+		
 		try {
 			Loader.loadSound(
 					"helicopter",

@@ -65,8 +65,11 @@ public abstract class Sprite extends GameObject {
 	public float getVelocityUpDown(){
 		return velocityUpDown;
 	}
-	public void setVelocityUpDown(float velocityUpDown){
+	public void setVelocityUpDown(float velocity){
 		this.velocityUpDown =  velocityUpDown;
+	}
+	public void setVelocityLeftRight(float velocity){
+		this.velocityLeftRight =  velocity;
 	}
 	
 	public float getVelocityLeftRight(){
