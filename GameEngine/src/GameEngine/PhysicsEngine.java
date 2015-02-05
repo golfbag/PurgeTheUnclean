@@ -7,7 +7,7 @@ public class PhysicsEngine {
 	private int zeroPoint;
 	private float gravity = -0.0f;
 	private float velocity = 0.0f;
-	private float maxVelocity = 300;
+	private float maxVelocity = 200;
 
 	public PhysicsEngine(int zeroPoint, float gravity) {
 		this.zeroPoint = zeroPoint;
@@ -19,17 +19,21 @@ public class PhysicsEngine {
 			sprite.setY(zeroPoint);
 
 		long delta = GameWindow.getInstance().getDelta();
-		
+
 		if (sprite.getVelocityUpDown() <= maxVelocity)
-			sprite.setVelocityUpDown(sprite.getVelocityUpDown() +  (gravity * delta) / 1000);
-		sprite.setY(sprite.getYPos() + (int) (0.5 * sprite.getVelocityUpDown() * delta) / 1000);
+			sprite.setVelocityUpDown(sprite.getVelocityUpDown()
+					+ (gravity * delta) / 1000);
+		sprite.setY(sprite.getYPos()
+				+ (int) (0.5 * sprite.getVelocityUpDown() * delta) / 1000);
 
 	}
-	public void doPhysics(Sprite sprite){
-		
+
+	public void doPhysics(Sprite sprite) {
+
 		long delta = GameWindow.getInstance().getDelta();
-		
+
 		if (sprite.getVelocityLeftRight() != 0)
+
 			sprite.setX(sprite.getXPos()
 					+ (int) ((0.5 * sprite.getVelocityLeftRight() * delta) / 1000));
 		if (sprite.getVelocityUpDown() != 0)
@@ -44,6 +48,7 @@ public class PhysicsEngine {
 					sprite1.getYPos(), sprite1.getWidth(), sprite1.getHeight());
 			Rectangle rectangle2 = new Rectangle(sprite2.getXPos(),
 					sprite2.getYPos(), sprite2.getWidth(), sprite2.getHeight());
+			
 			return rectangle1.getBounds().intersects(rectangle2.getBounds());
 		} else
 			return false;
