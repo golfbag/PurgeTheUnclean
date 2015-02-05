@@ -7,7 +7,6 @@ import GameEngine.*;
 import GameEngine.ApplicationFramework.Animation;
 import GameEngine.ApplicationFramework.GameWindow;
 
-
 public class TheGame {
 
 	public static void main(String[] args) {
