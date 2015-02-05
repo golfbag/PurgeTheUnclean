@@ -1,8 +1,8 @@
 package TestGame;
 
-import GameEngine.AnimatedSprite;
-import GameEngine.Animation;
-import GameEngine.Sprite;
+import GameEngine.ApplicationFramework.AnimatedSprite;
+import GameEngine.ApplicationFramework.Animation;
+import GameEngine.ApplicationFramework.Sprite;
 
 public class DeadEnemy extends AnimatedSprite{
 

@@ -1,6 +1,6 @@
 package TestGame;
 
-import GameEngine.Sprite;
+import GameEngine.ApplicationFramework.Sprite;
 
 public class Floor extends Sprite {
 

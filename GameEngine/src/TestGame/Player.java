@@ -2,8 +2,8 @@ package TestGame;
 
 import java.awt.event.KeyEvent;
 
-import GameEngine.GameWindow;
-import GameEngine.Sprite;
+import GameEngine.ApplicationFramework.GameWindow;
+import GameEngine.ApplicationFramework.Sprite;
 
 public class Player extends Sprite {
 

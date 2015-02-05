@@ -2,10 +2,10 @@ package TestGame;
 
 import java.awt.event.KeyEvent;
 
-import GameEngine.AnimatedSprite;
-import GameEngine.Animation;
-import GameEngine.GameWindow;
-import GameEngine.Sprite;
+import GameEngine.ApplicationFramework.AnimatedSprite;
+import GameEngine.ApplicationFramework.Animation;
+import GameEngine.ApplicationFramework.GameWindow;
+import GameEngine.ApplicationFramework.Sprite;
 
 public class AnimatedEnemy extends AnimatedSprite {
 

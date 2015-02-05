@@ -1,6 +1,6 @@
 package TestGame;
 
-import GameEngine.GameObject;
+import GameEngine.ApplicationFramework.GameObject;
 
 public class Background extends GameObject {
 
