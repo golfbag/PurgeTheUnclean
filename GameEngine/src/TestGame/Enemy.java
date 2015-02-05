@@ -7,6 +7,7 @@ public class Enemy extends Sprite {
 	public Enemy(int xPos, int yPos, String imageID) {
 		super(xPos, yPos, imageID);
 		setCollidable(true);
+		setHasGravity(true);
 		setHasPhysics(true);
 	}
 

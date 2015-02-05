@@ -2,6 +2,7 @@ package GameEngine;
 
 public abstract class Sprite extends GameObject {
 	private boolean hasPhysics;
+	private boolean hasGravity;
 	private boolean isCollidable;
 	private boolean isAlive;
 	
@@ -72,8 +73,15 @@ public abstract class Sprite extends GameObject {
 		return velocityLeftRight;
 	}
 	
-	
 	public float getAcceleration(){
 		return acceleration;
+	}
+
+	public boolean getHasGravity() {
+		return hasGravity;
+	}
+
+	public void setHasGravity(boolean hasGravity) {
+		this.hasGravity = hasGravity;
 	}
 }

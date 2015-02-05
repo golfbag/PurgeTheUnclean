@@ -9,6 +9,7 @@ public class Player extends Sprite {
 
 	public Player(int xPos, int yPos, String fileName) {
 		super(xPos, yPos, fileName);
+		setHasGravity(true);
 		setHasPhysics(true);
 		setCollidable(true);
 	}

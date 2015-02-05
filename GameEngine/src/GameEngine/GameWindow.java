@@ -54,6 +54,8 @@ public final class GameWindow extends JFrame {
 					physicsEngine.doCollision(sprite);
 				sprite.update();
 				if (sprite.getHasPhysics())
+					physicsEngine.doPhysics(sprite);
+				if(sprite.getHasGravity())
 					physicsEngine.doGravity(sprite);
 			}
 		}

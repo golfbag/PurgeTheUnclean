@@ -19,17 +19,22 @@ public class PhysicsEngine {
 			sprite.setY(zeroPoint);
 
 		long delta = GameWindow.getInstance().getDelta();
+		
+		if (sprite.getVelocityUpDown() <= maxVelocity)
+			sprite.setVelocityUpDown(sprite.getVelocityUpDown() +  (gravity * delta) / 1000);
+		sprite.setY(sprite.getYPos() + (int) (0.5 * sprite.getVelocityUpDown() * delta) / 1000);
 
+	}
+	public void doPhysics(Sprite sprite){
+		
+		long delta = GameWindow.getInstance().getDelta();
+		
 		if (sprite.getVelocityLeftRight() != 0)
 			sprite.setX(sprite.getXPos()
 					+ (int) ((0.5 * sprite.getVelocityLeftRight() * delta) / 1000));
 		if (sprite.getVelocityUpDown() != 0)
 			sprite.setY(sprite.getYPos()
 					+ (int) ((0.5 * sprite.getVelocityUpDown() * delta) / 1000));
-
-		if (sprite.getVelocityUpDown() <= maxVelocity)
-			sprite.setVelocityUpDown(sprite.getVelocityUpDown() +  (gravity * delta) / 1000);
-		sprite.setY(sprite.getYPos() + (int) (0.5 * sprite.getVelocityUpDown() * delta) / 1000);
 
 	}
 
