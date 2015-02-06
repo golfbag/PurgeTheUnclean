@@ -19,14 +19,14 @@ public class PhysicsEngine {
 
 	public void doGravity(Sprite sprite) {
 		if (sprite.getYPos() >= zeroPoint){
-			sprite.setY(zeroPoint);
+			sprite.setYPos(zeroPoint);
 		}else{
 			long delta = GameWindow.getInstance().getDelta();
 
 			if (sprite.getVelocityUpDown() <= maxVelocity)
 				sprite.setVelocityUpDown(sprite.getVelocityUpDown()
 						+ (gravity * delta) / 1000);
-			sprite.setY(sprite.getYPos()
+			sprite.setYPos(sprite.getYPos()
 					+ (int) (0.5 * sprite.getVelocityUpDown() * delta) / 1000);
 		}
 			
@@ -35,10 +35,10 @@ public class PhysicsEngine {
 
 		if (sprite.getVelocityLeftRight() != 0)
 
-			sprite.setX(sprite.getXPos()
+			sprite.setXPos(sprite.getXPos()
 					+ (int) ((0.5 * sprite.getVelocityLeftRight() * delta) / 1000));
 		if (sprite.getVelocityUpDown() != 0)
-			sprite.setY(sprite.getYPos()
+			sprite.setYPos(sprite.getYPos()
 					+ (int) ((0.5 * sprite.getVelocityUpDown() * delta) / 1000));
 
 	}

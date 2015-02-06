@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class State implements Serializable {
 	private ArrayList<Sprite> sprites = new ArrayList<>();
-	private GameObject backgrund;
+	private GameObject background;
 	
 	public State(GameObject backgrund){
 		this.setBackgrund(backgrund);
@@ -25,10 +25,10 @@ public class State implements Serializable {
 	}
 
 	public GameObject getBackgrund() {
-		return backgrund;
+		return background;
 	}
 
-	public void setBackgrund(GameObject backgrund) {
-		this.backgrund = backgrund;
+	public void setBackgrund(GameObject background) {
+		this.background = background;
 	}
 }

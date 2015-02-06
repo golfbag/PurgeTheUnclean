@@ -5,18 +5,18 @@ public class Animation {
 	private int currentRow;
 	private int frameWidth;
 	private int frameHeight;
-	private String fileName;
+	private String imageID;
 	private int numberOfRows;
 	private int numberOfFrames;
 
 	public Animation(int currentFrame, int currentRow, int frameWidth,
-			int frameHeight, String fileName, int numberOfFrames,
+			int frameHeight, String imageID, int numberOfFrames,
 			int numberOfRows) {
 		this.currentFrame = currentFrame;
 		this.currentRow = currentRow;
 		this.frameWidth = frameWidth;
 		this.frameHeight = frameHeight;
-		this.fileName = fileName;
+		this.imageID = imageID;
 		this.setNumberOfFrames(numberOfFrames);
 		this.setNumberOfRows(numberOfRows);
 	}
@@ -53,12 +53,12 @@ public class Animation {
 		this.frameHeight = frameHeight;
 	}
 
-	public String getFileName() {
-		return fileName;
+	public String getImageID() {
+		return imageID;
 	}
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setImageID(String imageID) {
+		this.imageID = imageID;
 	}
 
 	public int getNumberOfRows() {

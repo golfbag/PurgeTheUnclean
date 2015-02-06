@@ -9,7 +9,7 @@ public abstract class AnimatedSprite extends Sprite {
 	private Animation animation;
 
 	public AnimatedSprite(int xPos, int yPos, Animation animation) {
-		super(xPos, yPos, animation.getFileName());
+		super(xPos, yPos, animation.getImageID());
 		this.animation = animation;
 		setHeight(animation.getFrameHeight());
 		setWidth(animation.getFrameWidth());
@@ -34,7 +34,7 @@ public abstract class AnimatedSprite extends Sprite {
 
 	public void setAnimation(Animation animation) {
 		this.animation = animation;
-		setImageID(animation.getFileName());
+		setImageID(animation.getImageID());
 		setHeight(animation.getFrameHeight());
 		setWidth(animation.getFrameWidth());
 	}
