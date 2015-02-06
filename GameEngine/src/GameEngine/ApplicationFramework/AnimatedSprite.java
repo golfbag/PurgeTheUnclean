@@ -2,6 +2,7 @@ package GameEngine.ApplicationFramework;
 
 import GameEngine.Loader;
 
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
@@ -16,7 +17,7 @@ public abstract class AnimatedSprite extends Sprite {
 	}
 
 	@Override
-	public void draw(Graphics2D g) {
+	public void paintComponent(Graphics g) {
 		BufferedImage currentSprite = Loader
 				.getImage(getImageID())
 				.getSubimage(

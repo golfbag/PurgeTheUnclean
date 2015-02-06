@@ -9,7 +9,7 @@ import GameEngine.ApplicationFramework.Sprite;
 public class PhysicsEngine {
 
 	private int zeroPoint;
-	private float gravity = -0.0f;
+	private float gravity;
 	private float maxVelocity = 200;
 
 	public PhysicsEngine(int zeroPoint, float gravity) {
@@ -29,23 +29,17 @@ public class PhysicsEngine {
 			sprite.setY(sprite.getYPos()
 					+ (int) (0.5 * sprite.getVelocityUpDown() * delta) / 1000);
 		}
-			
+	}
 
+	public void doPhysics(Sprite sprite) {
 		long delta = GameWindow.getInstance().getDelta();
 
 		if (sprite.getVelocityLeftRight() != 0)
-
 			sprite.setX(sprite.getXPos()
 					+ (int) ((0.5 * sprite.getVelocityLeftRight() * delta) / 1000));
 		if (sprite.getVelocityUpDown() != 0)
 			sprite.setY(sprite.getYPos()
 					+ (int) ((0.5 * sprite.getVelocityUpDown() * delta) / 1000));
-
-	}
-
-	public void doPhysics(Sprite sprite) {
-
-
 	}
 
 	public boolean checkCollision(Sprite sprite1, Sprite sprite2) {

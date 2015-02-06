@@ -2,10 +2,13 @@ package GameEngine.ApplicationFramework;
 
 import GameEngine.Loader;
 
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-public abstract class GameObject {
+import javax.swing.JComponent;
+
+public abstract class GameObject extends JComponent{
 	
 	private int xPos;
 	private int yPos;
@@ -31,8 +34,9 @@ public abstract class GameObject {
 	public BufferedImage getImage(){
 		return Loader.getImage(imageID);
 	}
-
-	public void draw(Graphics2D g){
+	@Override
+	public void paintComponent(Graphics g){
+		super.paintComponent(g);
 		g.drawImage(getImage(), xPos, yPos, width, height, null);
 	}
 	

@@ -2,18 +2,30 @@ package GameEngine;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
+import GameEngine.ApplicationFramework.GameWindow;
 import GameEngine.ApplicationFramework.Sprite;
 import GameEngine.ApplicationFramework.State;
 
 public final class Renderer {
-	
-	public static void render(State state, Graphics g){
-		
-		for(Sprite sprite : state.getSprites()){
-			sprite.draw((Graphics2D) g);
+	private static BufferedImage mainImage = new BufferedImage(GameWindow
+			.getInstance().getWidth(), GameWindow.getInstance().getHeight(),
+			BufferedImage.TYPE_INT_RGB);
+
+	public static BufferedImage render(State state) {
+		if (state.getBackgrund() != null){
+			Graphics g = mainImage.getGraphics();
+			
+			g.drawImage(state.getBackgrund().getImage(),state.getBackgrund().getXPos(), state.getBackgrund().getYPos(), state.getBackgrund().getWidth(), state.getBackgrund().getHeight(), null);
 		}
-		if (state.getBackgrund()!= null)
-			state.getBackgrund().draw((Graphics2D) g);
+		
+		for (Sprite sprite : state.getSprites()) {
+			Graphics g = mainImage.getGraphics();
+			sprite.paintComponent(g);
+			//g.drawImage(sprite.getImage(), sprite.getXPos(), sprite.getYPos(), sprite.getWidth(), sprite.getHeight(), null);
+		}
+		
+		return mainImage;
 	}
 }
