@@ -1,10 +1,11 @@
 package GameEngine.ApplicationFramework;
 
+import GameEngine.PhysicsEngine;
+
 import java.util.Timer;
 
 import javax.swing.JFrame;
 
-import GameEngine.PhysicsEngine;
 import GameEngine.InputHandler.KeyHandler;
 import GameEngine.InputHandler.MouseHandler;
 

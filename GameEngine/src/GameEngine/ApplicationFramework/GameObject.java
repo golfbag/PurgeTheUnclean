@@ -1,9 +1,9 @@
 package GameEngine.ApplicationFramework;
 
+import GameEngine.Loader;
+
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-
-import GameEngine.Loader;
 
 public abstract class GameObject {
 	

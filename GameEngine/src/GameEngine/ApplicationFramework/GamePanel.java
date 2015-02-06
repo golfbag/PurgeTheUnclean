@@ -1,10 +1,10 @@
 package GameEngine.ApplicationFramework;
 
+import GameEngine.Renderer;
+
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
-
-import GameEngine.Renderer;
 
 public class GamePanel extends JPanel {
 	State state;

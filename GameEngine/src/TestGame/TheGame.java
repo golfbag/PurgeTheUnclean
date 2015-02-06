@@ -1,9 +1,10 @@
 package TestGame;
 
+import GameEngine.*;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import GameEngine.*;
 import GameEngine.ApplicationFramework.Animation;
 import GameEngine.ApplicationFramework.GameWindow;
 
