@@ -31,12 +31,12 @@ public abstract class Sprite extends GameObject {
 		if(dx > 0)
 			velocityLeftRight += (acceleration * delta + dx)/1000;
 		else if (dx < 0)
-			velocityLeftRight -= (acceleration * delta +dx)/1000;
+			velocityLeftRight -= (acceleration * delta + dx)/1000;
 		
 		else if (dy > 0)
 			velocityUpDown -= (acceleration * delta + dy)/1000;
 		if (dy < 0)
-			velocityUpDown += (acceleration * delta +dy)/1000;
+			velocityUpDown += (acceleration * delta + dy)/1000;
 		
 		System.out.println("velocity Right Left: " + velocityLeftRight);
 		

@@ -63,11 +63,11 @@ public abstract class GameObject extends JComponent{
 		this.width =  width;
 	}
 	
-	public void setX(int xPos) {
+	public void setXPos(int xPos) {
 		this.xPos = xPos;	
 	}
 	
-	public void setY(int yPos) {
+	public void setYPos(int yPos) {
 		this.yPos = yPos;
 	}	
 }

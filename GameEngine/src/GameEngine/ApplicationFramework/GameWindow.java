@@ -75,6 +75,7 @@ public final class GameWindow extends JFrame {
 			GameObject background, int zeroPoint, float gravity) {
 		super(windowName);
 		setSize(windowWidth, windowHeight);
+		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		state = new State(background);
