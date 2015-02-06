@@ -32,6 +32,7 @@ public class MouseHandler implements MouseListener{
 	@Override
 	public void mouseReleased(MouseEvent mve) {
 		mouseEvents[MouseEvent.MOUSE_PRESSED] = false;
+		mouseEvents[MouseEvent.MOUSE_CLICKED] = false;
 		
 	}
 	public boolean isKey(int mouseEventNumber){

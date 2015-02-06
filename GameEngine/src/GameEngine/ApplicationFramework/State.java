@@ -2,9 +2,10 @@ package GameEngine.ApplicationFramework;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class State implements Serializable {
+	
+	private static final long serialVersionUID = -7700837087887282089L;
 	private ArrayList<Sprite> sprites = new ArrayList<>();
 	private GameObject background;
 	

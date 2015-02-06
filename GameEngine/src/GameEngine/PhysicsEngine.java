@@ -1,8 +1,6 @@
 package GameEngine;
 
 import java.awt.Rectangle;
-import java.awt.event.KeyEvent;
-
 import GameEngine.ApplicationFramework.GameWindow;
 import GameEngine.ApplicationFramework.Sprite;
 

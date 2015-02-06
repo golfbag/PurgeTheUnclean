@@ -3,10 +3,11 @@ package GameEngine.ApplicationFramework;
 import GameEngine.Loader;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 public abstract class AnimatedSprite extends Sprite {
+	
+	private static final long serialVersionUID = -2175047116647073334L;
 	private Animation animation;
 
 	public AnimatedSprite(int xPos, int yPos, Animation animation) {

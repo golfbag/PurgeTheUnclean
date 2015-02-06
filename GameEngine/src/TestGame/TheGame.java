@@ -14,7 +14,7 @@ public class TheGame {
 		Loader.loadImage("bakgrund", "C:/Users/Fabian/Pictures/bakgrund2.png");
 		Background bakgrund = new Background(0, 50, "bakgrund");
 
-		GameWindow.createInstance("Test", 640, 480, null, 340, 30f);
+		GameWindow.createInstance("Test", 640, 480, bakgrund, 340, 30f);
 		
 		Loader.loadImage("mark", "C:/Users/Fabian/Pictures/mark2.png");
 		Floor mark = new Floor(10, 400, "mark");

@@ -2,6 +2,8 @@ package GameEngine.ApplicationFramework;
 
 
 public abstract class Sprite extends GameObject {
+	
+	private static final long serialVersionUID = -6830883833749895054L;
 	private boolean hasPhysics;
 	private boolean hasGravity;
 	private boolean isCollidable;
@@ -67,7 +69,7 @@ public abstract class Sprite extends GameObject {
 		return velocityUpDown;
 	}
 	public void setVelocityUpDown(float velocity){
-		this.velocityUpDown =  velocityUpDown;
+		this.velocityUpDown =  velocity;
 	}
 	public void setVelocityLeftRight(float velocity){
 		this.velocityLeftRight =  velocity;

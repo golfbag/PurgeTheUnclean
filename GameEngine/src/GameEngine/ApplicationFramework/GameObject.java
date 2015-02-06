@@ -3,13 +3,12 @@ package GameEngine.ApplicationFramework;
 import GameEngine.Loader;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JComponent;
 
 public abstract class GameObject extends JComponent{
-	
+	private static final long serialVersionUID = -8830938133041862167L;
 	private int xPos;
 	private int yPos;
 	private int height;

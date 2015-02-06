@@ -11,6 +11,7 @@ import GameEngine.InputHandler.MouseHandler;
 
 public final class GameWindow extends JFrame {
 
+	private static final long serialVersionUID = -3540027352632823550L;
 	private boolean isRunning;
 	private GamePanel gamePanel;
 	private State state;

@@ -1,7 +1,6 @@
 package GameEngine;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import GameEngine.ApplicationFramework.GameWindow;
@@ -17,7 +16,7 @@ public final class Renderer {
 		if (state.getBackgrund() != null){
 			Graphics g = mainImage.getGraphics();
 			
-			g.drawImage(state.getBackgrund().getImage(),state.getBackgrund().getXPos(), state.getBackgrund().getYPos(), state.getBackgrund().getWidth(), state.getBackgrund().getHeight(), null);
+			state.getBackgrund().paintComponent(g);
 		}
 		
 		for (Sprite sprite : state.getSprites()) {
