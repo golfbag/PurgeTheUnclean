@@ -18,7 +18,7 @@ public abstract class AnimatedSprite extends Sprite {
 	}
 
 	@Override
-	public void draw(Graphics g) {
+	public void paintComponent(Graphics g) {
 		BufferedImage currentSprite = Loader
 				.getImage(getImageID())
 				.getSubimage(

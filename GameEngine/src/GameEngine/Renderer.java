@@ -16,12 +16,12 @@ public final class Renderer {
 		if (state.getBackgrund() != null){
 			Graphics g = mainImage.getGraphics();
 			
-			state.getBackgrund().draw(g);
+			state.getBackgrund().paintComponent(g);
 		}
 		
 		for (Sprite sprite : state.getSprites()) {
 			Graphics g = mainImage.getGraphics();
-			sprite.draw(g);
+			sprite.paintComponent(g);
 			//g.drawImage(sprite.getImage(), sprite.getXPos(), sprite.getYPos(), sprite.getWidth(), sprite.getHeight(), null);
 		}
 		

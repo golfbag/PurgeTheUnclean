@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JComponent;
 
-public abstract class GameObject{
+public abstract class GameObject extends JComponent{
 	private static final long serialVersionUID = -8830938133041862167L;
 	private int xPos;
 	private int yPos;
@@ -33,8 +33,9 @@ public abstract class GameObject{
 	public BufferedImage getImage(){
 		return Loader.getImage(imageID);
 	}
-	
-	public void draw(Graphics g){
+	@Override
+	public void paintComponent(Graphics g){
+		super.paintComponent(g);
 		g.drawImage(getImage(), xPos, yPos, width, height, null);
 	}
 	
